@@ -1,5 +1,7 @@
 var dotenv = require("dotenv");
-dotenv.config();
+dotenv.config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 
 const { spaceId, accessToken, snipcart } = process.env;
 

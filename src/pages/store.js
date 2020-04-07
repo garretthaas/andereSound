@@ -69,6 +69,7 @@ class IndexPost extends React.Component {
                         data-item-image={items.node.image === null ? "" : items.node.image.fixed.src}
                         data-item-name={items.node.name}
                         data-item-url={`/`}
+                        data-item-file-guid={items.node.digitalDownloadNumber}
                       >
                         <i className="fas fa-shopping-bag" />Add to Cart
                     </a>
@@ -104,6 +105,7 @@ export const query = graphql`
           id
           name
           slug
+          digitalDownloadNumber
           rating
           image {
             fixed(width: 1000, height: 500) {

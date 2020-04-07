@@ -48,6 +48,7 @@ const ProductDetails = data => (
               data-item-image={data.data.contentfulProduct.image === null ? "" : data.data.contentfulProduct.image.fixed.src}
               data-item-name={data.data.contentfulProduct.name}
               data-item-url={`/`}
+              data-item-file-guid={data.data.contentfulProduct.digitalDownloadNumber}
             >
               <i className="fas fa-tags" />
               Buy Now
@@ -72,6 +73,7 @@ export const query = graphql`
       id
       name
     slug
+    digitalDownloadNumber
       image {
       fixed(width: 1120, height: 500) {
       width
