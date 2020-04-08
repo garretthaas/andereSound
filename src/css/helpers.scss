@@ -1,0 +1,34 @@
+@mixin bp($point) {
+  
+    $mobile: "(min-width: 768px)";
+    $tablet: "(min-width: 1024px)";
+    $laptop: "(min-width: 1280px)";
+    $desktop: "(min-width: 1440px)";
+    $monitorl: "(min-width: 1680px)";
+    $monitorxl: "(min-width: 1920px)";
+    $monitorhuge: "(min-width: 2560px)";
+  
+    @if $point == mobile {
+      @media #{$mobile} { @content; }
+    }
+    @else if $point == tablet {
+      @media #{$tablet} { @content; }
+    }
+    @else if $point == laptop {
+      @media #{$laptop}  { @content; }
+    }
+    @else if $point == desktop {
+        @media #{$desktop}  { @content; }
+    }
+    @else if $point == monitorl {
+        @media #{$monitorl}  { @content; }
+    }
+    @else if $point == monitorxl {
+        @media #{$monitorxl}  { @content; }
+    }
+    @else if $point == monitorhuge {
+        @media #{$monitorhuge}  { @content; }
+    }
+    
+  
+  }

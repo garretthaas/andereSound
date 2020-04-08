@@ -7,16 +7,9 @@ class Copyright extends React.Component {
         return (
             < Layout >
                 <SEO title="Copyright" keywords={[`gatsby`, `application`, `react`]} />
-                <div className="site-About">
                     <div className="container">
-                        <div className="row">
-                            <div className="col-sm-12">
-                                <h2>Copyright</h2>
-                                <p>© 2019 Oneshopper. All rights reserved.</p>
-                            </div>
-                        </div>
+                                <p>Copyright © 2020 Andere Sound. All rights reserved.</p>
                     </div>
-                </div>
             </ Layout>
         )
     }

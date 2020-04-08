@@ -1,5 +1,5 @@
 html {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -185,7 +185,7 @@ textarea {
   font: inherit;
 }
 html {
-  font: 112.5%/1.45em georgia, serif;
+  font: 10px;
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -605,6 +605,6 @@ pre tt:after {
 }
 @media only screen and (max-width: 480px) {
   html {
-    font-size: 100%;
+    font-size: 10px;
   }
 }

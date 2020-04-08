@@ -5,8 +5,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Banner from "../components/banner"
 import LatestBlogs from "../components/latestBlog"
-import Countdown from "../components/countdown"
+//import Countdown from "../components/countdown"
 import StarRatingComponent from 'react-star-rating-component';
+import Hero from "../components/hero"
 
 class IndexPost extends React.Component {
   constructor(props) {
@@ -69,13 +70,14 @@ const IndexPage = data => (
 
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <Hero data={data.data.contentfulBlockHero} />
     <Banner BannerData={data.data.allContentfulHeaderBanner.edges} />
     <LatestBlogs data={data.data.allContentfulBlogs} />
     <div className="container">
       <div className="text-center"><h2 className="with-underline">Latest Items</h2></div>
       <IndexPost data={data}></IndexPost>
     </div>
-    <Countdown data={data.data.contentfulDealCountDown} />
+    {/* <Countdown data={data.data.contentfulDealCountDown} /> */}
   </Layout>
 )
 
@@ -83,6 +85,17 @@ export default IndexPage
 
 export const query = graphql`
   query AboutQuery {
+
+    contentfulBlockHero {
+      heroText
+      heroLink
+      heroMedia {
+        file {
+          url
+        }
+      }
+    }
+
     allContentfulProduct(limit: 6,sort:{fields:createdAt,order: DESC}){
       edges{
         node{
@@ -129,21 +142,7 @@ export const query = graphql`
         }
       }
     }
-    contentfulDealCountDown {
-      title
-      featureImage {
-        fluid(maxWidth: 1800) {
-          base64
-          aspectRatio
-          src
-          srcSet
-          srcWebp
-          srcSetWebp
-          sizes
-        }
-      }
-      date(formatString: "D MMMM, YYYY")
-    }
+    
     allContentfulBlogs(limit: 3,sort:{fields:createdAt,order: DESC}) {
       edges {
         node {
@@ -169,3 +168,18 @@ export const query = graphql`
 
 
 
+// contentfulDealCountDown {
+//   title
+//   featureImage {
+//     fluid(maxWidth: 1800) {
+//       base64
+//       aspectRatio
+//       src
+//       srcSet
+//       srcWebp
+//       srcSetWebp
+//       sizes
+//     }
+//   }
+//   date(formatString: "D MMMM, YYYY")
+// }

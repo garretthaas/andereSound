@@ -7,9 +7,9 @@ const { spaceId, accessToken, snipcart } = process.env;
 
 module.exports = {
   siteMetadata: {
-    title: `OneShopper`,
-    description: `E-Commerce site with Gatsby and React`,
-    author: `@rohitguptab`,
+    title: `Andere Sound`,
+    description: `Easy to use audio tools`,
+    author: `garretthaas.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -23,6 +23,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
+    `gatsby-plugin-sass`,
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {

@@ -88,8 +88,8 @@ class IndexPost extends React.Component {
 const IndexPage = data => (
 
   <Layout>
-    <SEO title="Store" keywords={[`gatsby`, `application`, `react`]} />
-    <div className="container store-page">
+    <SEO title="Audio-Tools" keywords={[`gatsby`, `application`, `react`]} />
+    <div className="container audio-tools-page">
       <IndexPost data={data}></IndexPost>
     </div>
   </Layout>
@@ -98,7 +98,7 @@ const IndexPage = data => (
 export default IndexPage
 
 export const query = graphql`
-  query StoreQuery {
+  query AudioToolsQuery {
     allContentfulProduct{
       edges{
         node{

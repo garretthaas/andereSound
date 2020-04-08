@@ -16,12 +16,12 @@ const ProductDetails = data => (
             <Tabs>
               {data.data.contentfulProduct.productMorePhotos.map(items => (
                 <TabPanel key={items.id}>
-                  <Tab><img src={items.fixed.src} /></Tab>
+                  <Tab><img src={items.fluid.src} /></Tab>
                 </TabPanel>
               ))}
               <TabList>
                 {data.data.contentfulProduct.productMorePhotos.map(items => (
-                  <Tab key={items.id}><img src={items.fixed.src} /></Tab>
+                  <Tab key={items.id}><img src={items.fluid.src} /></Tab>
                 ))}
               </TabList>
             </Tabs>}
@@ -45,7 +45,7 @@ const ProductDetails = data => (
               className="Product snipcart-add-item"
               data-item-id={data.data.contentfulProduct.slug}
               data-item-price={data.data.contentfulProduct.price}
-              data-item-image={data.data.contentfulProduct.image === null ? "" : data.data.contentfulProduct.image.fixed.src}
+              data-item-image={data.data.contentfulProduct.image === null ? "" : data.data.contentfulProduct.image.fluid.src}
               data-item-name={data.data.contentfulProduct.name}
               data-item-url={`/`}
               data-item-file-guid={data.data.contentfulProduct.digitalDownloadNumber}
@@ -75,9 +75,7 @@ export const query = graphql`
     slug
     digitalDownloadNumber
       image {
-      fixed(width: 1120, height: 500) {
-      width
-          height
+      fluid(maxWidth: 3500) {
     src
     srcSet
   }
@@ -90,7 +88,7 @@ price
 }
 productMorePhotos {
   id
-  fixed(width: 1120, height: 600){
+  fluid(maxWidth: 3500){
     src
   }
 }
